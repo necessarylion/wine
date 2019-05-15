@@ -1,7 +1,24 @@
 <?php include "component/header.php";?>
 <div class="container-fluid">
 
-//body
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Extension Name</th>
+			<th>Link</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Resource</td>
+			<td><a href="resource/"><span class="badge badge-pill badge-success ">Click Here</span></a></td>
+		</tr>
+		<tr>
+			<td>Wine-Card</td>
+			<td><a href="wine/"><span class="badge badge-pill badge-success ">Click Here</span></a></td>
+		</tr>
+	</tbody>
+</table>
 
 </div>
 <?php include "component/footer.php";?>

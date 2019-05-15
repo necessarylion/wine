@@ -1,6 +1,15 @@
 <script>
 $(document).ready(function(){
 
+	
+	$('.sidebar-dash').prepend('<li class="nav-item active">'+
+			'<a href="index.php" class="nav-link" href="">'+
+				'<i class="fas fa-fw fa-tachometer-alt"></i>'+
+				'<span>Dashboard</span></a>'+
+			'</li>');
+
+
+
 	$('.sidebar-detail').prepend('<li class="nav-item">'+
 		'<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">'+
 			'<i class="fas fa-fw fa-cog"></i>'+

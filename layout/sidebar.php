@@ -15,27 +15,25 @@
 
 
 
+<div class="sidebar-dash">
 
-<!-- Nav Item - Dashboard -->
-<li class="nav-item active">
-  <a class="nav-link" href="">
-	<i class="fas fa-fw fa-tachometer-alt"></i>
-	<span>Dashboard</span></a>
-</li>
+</div>
 
-<!-- Divider -->
+
 <hr class="sidebar-divider">
 
-<!-- Heading -->
+
 <div class="sidebar-heading">
   Detail
 </div>
+
+
 
 <div class="sidebar-detail">
 
 </div>
 
-<!-- Divider -->
+
 <hr class="sidebar-divider">
 
 </ul>

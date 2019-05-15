@@ -17,6 +17,8 @@
 
   <!-- Custom styles for this template-->
   <link href="<?php echo $application_url; ?>resource/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?php echo $application_url; ?>resource/vendor/datepicker/css/datepicker.css" rel="stylesheet">
+  <link href="<?php echo $application_url; ?>resource/vendor/select2/css/select2.css" rel="stylesheet">
 
 </head>
 
@@ -55,6 +57,16 @@
     </form> -->
 
     <!-- Topbar Navbar -->
+    <ul class="navbar-nav">
+    <li class="nav-item no-arrow mx-1">
+              <a href='<?php echo $link_url; ?>extension' class="nav-link text-black" >
+                <i class="fas fa-cog fa-fw"></i> &nbsp; Extensions
+                <!-- Counter - Alerts -->
+              </a>
+              
+       </li>
+       <div class="topbar-divider d-none d-sm-block"></div>
+    </ul>
     <ul class="navbar-nav ml-auto">
 
       <!-- Nav Item - Search Dropdown (Visible Only XS) 
@@ -76,8 +88,7 @@
           </form>
         </div>
       </li> -->
-
-     
+    
 
       <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -85,7 +96,7 @@
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="mr-2 d-none d-lg-inline text-gray-600 small">ADMIN</span>
-          <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+          <img class="img-profile rounded-circle" src="<?php echo $application_url."resource/img/garfield.png" ?>">
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

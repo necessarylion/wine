@@ -50,6 +50,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo $application_url; ?>resource/js/sb-admin-2.min.js"></script>
+  <script src="<?php echo $application_url; ?>resource/vendor/datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
 
 
 </body>
