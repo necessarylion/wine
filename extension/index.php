@@ -17,6 +17,10 @@
 			<td>Wine-Card</td>
 			<td><a href="wine/"><span class="badge badge-pill badge-success ">Click Here</span></a></td>
 		</tr>
+		<tr>
+			<td>Template</td>
+			<td><a href="template/"><span class="badge badge-pill badge-success ">Click Here</span></a></td>
+		</tr>
 	</tbody>
 </table>
 
