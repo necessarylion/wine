@@ -11,7 +11,7 @@ $link_url= "/wine/";
 $host = "localhost";
 $db_user = "root";
 $db_pass = "2529";
-$db_name = "test2";
+$db_name = "zkk";
 
 
 //<><><><><><><><><><><><><><><><><><>//

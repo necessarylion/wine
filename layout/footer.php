@@ -52,6 +52,7 @@
   <script src="<?php echo $application_url; ?>resource/js/sb-admin-2.min.js"></script>
   <script src="<?php echo $application_url; ?>resource/vendor/datepicker/js/bootstrap-datepicker.js"></script>
   <script src="<?php echo $application_url; ?>resource/vendor/select2/dist/js/select2.full.min.js"></script>
+  <script src="<?php echo $application_url; ?>resource/vendor/bootbox/bootbox.all.min.js"></script>
   
 
 
