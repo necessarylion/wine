@@ -18,7 +18,7 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo $application_url; ?>resource/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo $application_url; ?>resource/vendor/datepicker/css/datepicker.css" rel="stylesheet">
-  <link href="<?php echo $application_url; ?>resource/vendor/select2/css/select2.css" rel="stylesheet">
+  <link href="<?php echo $application_url; ?>resource/vendor/select2/dist/css/select2.css" rel="stylesheet">
 
 </head>
 
