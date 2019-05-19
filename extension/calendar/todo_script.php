@@ -43,7 +43,7 @@ $(document).on('click','.edit', function(){
 		palceholder: "Title",
 		value: sar,
 		callback: function(result){
-			if(result != false){
+			if(result != null){
 				if(result != ''){
 					Ajax({edit: id, title: result}, "run/cal/todo.php", function(o){
 						if(o == "success"){
@@ -62,7 +62,7 @@ $(document).on('click','.new', function(){
 		title: "New",
 		palceholder: "Title",
 		callback: function(result){
-			if(result != false){
+			if(result != null){
 				if(result != ''){
 					jsonAjax({new: 1, title: result}, "run/cal/todo.php", function(o){
 						

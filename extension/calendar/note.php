@@ -30,7 +30,7 @@ pre{
 <div class="row">
 	<div class="col-md-5">
 		<div class="form-group">
-			<input type="text" @keyup='searchFilter("search")' id='search' class="form-control" placeholder="Search" >
+			<input type="text" @keyup.enter='searchFilter("search")' id='search' class="form-control" placeholder="Type and Press Enter" >
 			
 		</div>
 	</div>
@@ -75,6 +75,7 @@ pre{
 </div>
 
 <span class="load-more btn btn-sm btn-danger pointer loadmore" @click="loadMore"  v-if="notes.length > 19">Load More</span>
+<div class="card" v-if="notes.length < 1"><div class="card-body text-center">No Result</div></div>
 <br><br>
 <a href="#" class="btn btn-primary btn-circle btn-lg new" @click="new_note">
 	<i class="fas fa-plus-circle"></i>

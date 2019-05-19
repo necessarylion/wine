@@ -128,8 +128,8 @@ var app = new Vue({
 		,
 		filterDate: function(){
 			var self = this;
-			this.notes = [];
 			jsonAjax({from: self.from_date, to: self.to_date}, "run/cal/note.php", function(output){
+				self.notes = [];
 				$.each(output, function(k,v){
 					self.notes.push({id: v.id, title: v.title, body: v.body, date_time : v.date_time  });
 				})
@@ -137,13 +137,15 @@ var app = new Vue({
 		},
 		searchFilter: function(){
 			var key = $('#search').val();
-			this.notes = [];
 			var self = this;
 			jsonAjax({key : key}, "run/cal/note.php", function(output){
-				$.each(output, function(k,v){
-					self.notes.push({id: v.id, title: v.title, body: v.body, date_time : v.date_time  });
-				})
+						self.notes = [];
+						$.each(output, function(k,v){
+							self.notes.push({id: v.id, title: v.title, body: v.body, date_time : v.date_time  });
+						})
 			})
+			
+			
 		},
 		loadMore: function(){
 			var self = this;
@@ -160,7 +162,7 @@ var app = new Vue({
 			})
 		},
 		cutString: function(a){
-			return	(a.length > 100)? a.slice(0,100)+'...': a;
+			return	(a.length > 100)? a.slice(0,100).replace(/\n\s*\n/g, ' ')+'...': a.replace(/\n\s*\n/g, ' ');
 		 
 		}
 	}
