@@ -21,6 +21,10 @@
 			<td>Template</td>
 			<td><a href="template/"><span class="badge badge-pill badge-success ">Click Here</span></a></td>
 		</tr>
+		<tr>
+			<td>Calendar</td>
+			<td><a href="calendar/"><span class="badge badge-pill badge-success ">Click Here</span></a></td>
+		</tr>
 	</tbody>
 </table>
 

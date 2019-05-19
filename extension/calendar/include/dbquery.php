@@ -69,7 +69,7 @@ Class DbQuery{
     function htmlDecode($data){
         $db =$this->conn;
         function change($haha,$db){
-           return htmlspecialchars(mysqli_real_escape_string($db,trim($haha)));
+           return (mysqli_real_escape_string($db,trim($haha)));
         }
         $this->posts = array_map(
             function($input) use ($db) { return change($input, $db); },
