@@ -2,8 +2,10 @@
 include('../../include/dbquery.php');
 $dbquery = new DbQuery();
 $dbquery->htmlDecode($_POST);
+$user_id = $_COOKIE['user_id'];
 
-$data = $dbquery->getall('easy_events');
+
+$data = $dbquery->findCondition("Where user_id = '$user_id'",'easy_events');
 
 $dbdata = [];
 

@@ -2,8 +2,9 @@
 include('../../include/dbquery.php');
 $dbquery = new DbQuery();
 $dbquery->htmlDecode($_POST);
-$posts = $dbquery->posts;
-$dbquery->getall('events');
+$user_id = $_COOKIE['user_id'];$posts = $dbquery->posts;
+
+$dbquery->findCondition("Where user_id='$user_id' ",'events');
 while($row = $dbquery->result->fetch_assoc()){
 
 $data[] = array(

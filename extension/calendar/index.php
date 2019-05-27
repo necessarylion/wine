@@ -89,6 +89,7 @@ ul li{
 </div>
 
 </div>
+
 <?php include "component/footer.php";
 	  include "index_script.php";
 ?>

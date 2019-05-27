@@ -20,7 +20,19 @@
 	
 }
 pre{
-	overflow:hidden;
+	overflow: auto !important;
+}
+.bootbox .modal-dialog{
+	max-width: 75% !important;
+}
+.bootbox .modal{
+	padding-right:0px !important;
+}
+.body{
+	color: black;
+    background: none;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 </style>
@@ -48,15 +60,12 @@ pre{
 		<div class="card border-left-primary shadow h-100 py-2">
 		<div class="card-body">
 			<div class="row no-gutters align-items-center title-div">
-			<div class="col mr-2 p-0">
+			<div class="col mr-2 p-0 pointer" @click="view_note(index, note.id)">
 				<div class="text-center font-weight-bold text-primary text-uppercase mb-1 title">{{note.title }}</div>
 				<hr>
 				<div class="text-center text-gray mb-1 body " v-html="cutString(note.body)"></div>
 				
 			</div>
-			</div>
-			<div class="text-center mt-4 more">
-				<a v-bind:href='link+note.id' class="text-bold btn btn-sm btn-primary rounded">More <i class="fas fa-chevron-circle-down"></i></a>
 			</div>
 			<div class="text-right tools">
 				<a href="#" class="btn btn-success btn-circle btn-sm edit" @click="edit_note(index, note.id)">
@@ -88,7 +97,7 @@ pre{
 
 
 
-
+<script src="<?php echo $application_url ?>resource/vendor/ckeditor/ckeditor.js"></script>
 <?php include "component/footer.php";
 	  include "note_script.php";
 ?>
@@ -98,7 +107,7 @@ pre{
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Modal title</h5>
+				<h5 class="modal-title">NOTE</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -125,3 +134,4 @@ pre{
 		</div>
 	</div>
 </div>
+<!-- Modal -->

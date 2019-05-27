@@ -3,9 +3,10 @@ include('../../include/dbquery.php');
 $dbquery = new DbQuery();
 $dbquery->htmlDecode($_POST);
 $posts = $dbquery->posts;
+$user_id = $_COOKIE['user_id'];
 
 if(isset($posts['load'])){
-	$dbquery->findCondition('order by id desc LIMIT 20','note');
+	$dbquery->findCondition("where user_id ='$user_id' order by id desc LIMIT 20",'note');
 	while($row = $dbquery->result->fetch_assoc()){
 
 	$data[] = array(
@@ -31,7 +32,8 @@ if(isset($posts['note_id']) && $posts['note_id'] == ''){
 	$data = [
 		'title' => htmlentities($posts['title']),
 		'body' => htmlentities($posts['body']),
-		'date_time' => date("Y-m-d")
+		'date_time' => date("Y-m-d"),
+		'user_id' => $user_id
 		];
 	$tableName = 'note';
 	$dbquery->save($data,$tableName);
@@ -77,7 +79,7 @@ if(isset($posts['note_id']) && $posts['note_id'] != ''){
 if(isset($posts['from']) && $posts['to']){
 	$from = $posts['from'];
 	$to = $posts['to'];
-	$condition = "Where date_time between '$from' and '$to'";
+	$condition = "Where date_time between '$from' and '$to' and user_id ='$user_id' order by id desc limit 20";
 
 	$dbquery->findCondition($condition,'note');
 	while($row = $dbquery->result->fetch_assoc()){
@@ -97,7 +99,7 @@ if(isset($posts['from']) && $posts['to']){
 
 if(isset($posts['key'])){
 	$key = $posts['key'];
-	$condition = "Where title Like '%$key%' ";
+	$condition = "Where title Like '%$key%' and user_id ='$user_id' order by id desc limit 20";
 
 	$dbquery->findCondition($condition,'note');
 	while($row = $dbquery->result->fetch_assoc()){
@@ -116,7 +118,7 @@ if(isset($posts['key'])){
 
 if(isset($posts['limit'])){
 	$limit = $posts['limit'];
-	$condition = "Limit $limit, 20";
+	$condition = "where user_id ='$user_id' Limit $limit, 20";
 
 	$dbquery->findCondition($condition,'note');
 	while($row = $dbquery->result->fetch_assoc()){
@@ -134,7 +136,7 @@ if(isset($posts['limit'])){
 
 if(isset($posts['get'])){
 	$a = $posts['get'];
-	$dbquery->findCondition("Where id = '$a'",'note');
+	$dbquery->findCondition("Where id = '$a' and user_id ='$user_id'",'note');
 	while($row = $dbquery->result->fetch_assoc()){
 
 	$daaa[] = array(

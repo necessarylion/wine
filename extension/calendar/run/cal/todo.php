@@ -3,9 +3,11 @@ include('../../include/dbquery.php');
 $dbquery = new DbQuery();
 $dbquery->htmlDecode($_POST);
 $posts = $dbquery->posts;
+$user_id = $_COOKIE['user_id'];
+
 
 if(isset($posts['load'])){
-	$dbquery->getall('problems');
+	$dbquery->findCondition("where user_id ='$user_id'",'problems');
 	while($row = $dbquery->result->fetch_assoc()){
 
 	$data[] = array(
@@ -35,7 +37,8 @@ if(isset($posts['edit'])){
 if(isset($posts['new'])){
 	$title = $posts['title'];
 	$data = [
-		'title' => $title
+		'title' => $title,
+		'user_id'=> $user_id
 		];
 	$tableName = 'problems';
 	$dbquery->save($data,$tableName);

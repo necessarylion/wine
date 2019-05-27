@@ -1,2 +1,2 @@
 <?php
-header("location: extension/");
+header("location: login/login.php");

@@ -1,0 +1,30 @@
+.pointer{
+    cursor: pointer;
+}
+.text-bold{
+    font-weight: 600;
+}
+.jconfirm .jconfirm-box-container{
+    margin-top: -140px !important;
+}
+.report-t tr td{
+    font-size: 12px !important;
+    height: 30px !important;
+}
+.div-refer{
+    height: 600px;
+    overflow:auto;
+}
+.jconfirm .jconfirm-box-container{
+    margin-top: 0px !important;
+}.select-file{
+    color: white;
+    padding: 7px;
+}
+
+.table-refer thead tr th{
+    position: sticky;
+    top: -1px;
+    background: white !important;
+}
+

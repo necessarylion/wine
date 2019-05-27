@@ -3,6 +3,9 @@ include('../../include/dbquery.php');
 $dbquery = new DbQuery();
 $dbquery->htmlDecode($_POST);
 $posts = $dbquery->posts;
+$user_id = $_COOKIE['user_id'];
+
+
 if(isset($posts['insert'])){ 
         $a= array("#f56954", "#f39c12", "#0073b7", "#00c0ef", "#00a65a", '#3c8dbc','black','red','blue');
         $title = $posts['title'];
@@ -16,6 +19,7 @@ if(isset($posts['insert'])){
         }
         $data = [
             'title' => $title,
+            'user_id'=> $user_id,
             'start_event' => $start,
             'end_event' => $end,
             'color' => $color
@@ -49,6 +53,7 @@ if(isset($posts['insert'])){
         $color = $posts['color'];
         $data = [
             'title' => $title,
+            'user_id'=> $user_id,
             'color' => $color
             ];
 

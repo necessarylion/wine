@@ -1,4 +1,8 @@
-
+$('.date').datepicker({
+    format: 'dd/mm/yyyy',
+    todayHighlight: true,
+    autoclose: true, orientation: "right"
+});
 function commaSeparate(val){
     if(val == 0 || val == null){
         return 0;
@@ -21,7 +25,7 @@ function commaSeparate(val){
 
 
 		/////////for side bar //////////////////
-		
+	
 		var res = alasql("SELECT * FROM ? order by id desc", [sidebar]);
 
 		$.each(res, function(k,v){

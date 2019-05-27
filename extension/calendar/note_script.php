@@ -43,12 +43,13 @@ $(document).on('click','.save',function(){
 									app.notes[note_key].title = title;
 									app.notes[note_key].body = body;
 								}
-								console.log(daa)
 							})
 							$('#modelId').modal('hide');
 							$('#note-title').val('');
-							$('#note-id').val('');
+							$('#note_id').val('');
+							$('#note_key').val('');
 							CKEDITOR.instances["note-body"].setData('');
+							
 						}
 						else{
 							fail_alert("PLEASE WRITE TITLE");
@@ -80,7 +81,7 @@ var app = new Vue({
   mounted: function(){
 	    var self = this;
 		jsonAjax({load: 1}, "run/cal/note.php", function(output){
-			console.log(output);
+		
 			$.each(output, function(k,v){
 				self.notes.push({id: v.id, title: v.title, body: v.body, date_time : v.date_time  });
 			})
@@ -90,10 +91,10 @@ var app = new Vue({
   },
   methods: {
 	  new_note: function(){
-			console.log('new');
 	  		var self = this;
 						$('#note-title').val('');
-						$('#note-id').val('');
+						$('#note_id').val('');
+						$('#note_key').val('');
 						CKEDITOR.instances["note-body"].setData('');
 						$('#modelId').modal('show');
 
@@ -124,6 +125,22 @@ var app = new Vue({
 
 				
 				
+      },
+			view_note: function(key, id) {
+			   var self = this;
+				 
+				 var a = this.notes[key].title;
+				 var b = this.notes[key].body;
+				 
+				 bootbox.dialog({
+					 size: "large",
+					 onEscape : true,
+						title: a,
+						message: b
+				});
+				Prism.highlightAll();
+				
+				
       }
 		,
 		filterDate: function(){
@@ -149,7 +166,6 @@ var app = new Vue({
 		},
 		loadMore: function(){
 			var self = this;
-			console.log(self.limit)
 			jsonAjax({limit : self.limit}, "run/cal/note.php", function(output){
 				$.each(output, function(k,v){
 					self.notes.push({id: v.id, title: v.title, body: v.body, date_time : v.date_time  });
@@ -161,13 +177,15 @@ var app = new Vue({
 				
 			})
 		},
-		cutString: function(a){
-			return	(a.length > 100)? a.slice(0,100).replace(/\n\s*\n/g, ' ')+'...': a.replace(/\n\s*\n/g, ' ');
-		 
+		cutString: function(t){
+			
+			var tmp = $("<div>").attr("style","display:none");
+			var a = tmp.html(t).text();
+			tmp.remove();
+			return	(a.length > 100)? a.slice(0,100).replace(/\n\s*\n/g, ' ')+' ....': a.replace(/\n\s*\n/g, ' ');
+			
 		}
 	}
 })
-
-
 
 </script>
